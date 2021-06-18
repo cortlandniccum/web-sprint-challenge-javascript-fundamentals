@@ -2,18 +2,18 @@
 /* 🚀🚀🚀🤓 Task 1: 🤓🚀🚀🚀 
 Study the code below and explain in your own words why nested function can access the variable internal. */
 
-// const external = "I'm outside the function";
+const external = "I'm outside the function";
 
-// function myFunction() {
-//   console.log(external);
-//   const internal = "Hello! I'm inside myFunction!";
+function myFunction() {
+  console.log(external);
+  const internal = "Hello! I'm inside myFunction!";
 
-//   function nestedFunction() {
-//     console.log(internal);
-//   }
-//   nestedFunction();
-// }
-// myFunction();
+  function nestedFunction() {
+    console.log(internal);
+  }
+  nestedFunction();
+}
+myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀:
 //it is able to access it because they are both inside of the same function
@@ -186,9 +186,9 @@ function greeting(first, last) {
 
 // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-// console.log(consume(2, 2, add)); // 4
-// console.log(consume(10, 16, multiply)); // 160
-// console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+console.log(consume(2, 2, add)); // 4
+console.log(consume(10, 16, multiply)); // 160
+console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
 // 🦁💪 Stretch: If you haven't already, convert your array method callbacks into arrow functions - make sure you comment out this section before you submit your work 🦁💪
 
