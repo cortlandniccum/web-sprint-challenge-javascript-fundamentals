@@ -2,18 +2,18 @@
 /* 🚀🚀🚀🤓 Task 1: 🤓🚀🚀🚀 
 Study the code below and explain in your own words why nested function can access the variable internal. */
 
-const external = "I'm outside the function";
+// const external = "I'm outside the function";
 
-function myFunction() {
-  console.log(external);
-  const internal = "Hello! I'm inside myFunction!";
+// function myFunction() {
+//   console.log(external);
+//   const internal = "Hello! I'm inside myFunction!";
 
-  function nestedFunction() {
-    console.log(internal);
-  }
-  nestedFunction();
-}
-myFunction();
+//   function nestedFunction() {
+//     console.log(internal);
+//   }
+//   nestedFunction();
+// }
+// myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀:
 //it is able to access it because they are both inside of the same function
@@ -107,9 +107,14 @@ const zooAnimals = [
   Use animalNames to populate and return the displayNames array with only the animal name and scientific name of each animal. 
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
-
-function animalNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+const displayNames = [];
+function animalNames(item) {
+  item.forEach(function (item) {
+    return displayNames.push(
+      `name: ${item.animal_name}, scientific: ${item.scientific_name}`
+    );
+  });
+  return displayNames;
 }
 
 /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -118,8 +123,9 @@ function animalNames(/*Your Code Here*/) {
   For example: ['jackal, asiatic', .....]
   */
 
-function lowerCaseNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lowerCaseNames(item) {
+  const lowerCase = item.map((item) => item.animal_name.toLowerCase());
+  return lowerCase;
 }
 
 /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
